@@ -1,6 +1,9 @@
 package co.davidwelch.test.GwtSpringMavenTest.client;
 
-import co.davidwelch.test.GwtSpringMavenTest.client.widgets.MultiSelect;
+import java.util.ArrayList;
+import java.util.List;
+
+import co.davidwelch.test.GwtSpringMavenTest.client.widgets.InlineMultiSelect;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -8,18 +11,24 @@ import com.google.gwt.user.client.ui.RootPanel;
 public class HelloWorldEntryPoint implements EntryPoint {
 
 	public void onModuleLoad() {
-		final MultiSelect m = new MultiSelect();
 		
-		m.addItem("Blah1");
-		m.addItem("blah2");
-		m.addItem("blah3");
-		m.addItem("blah4");
-		m.addItem("blah5");
-		m.addItem("blah6");
-		m.addItem("blah7");
-		m.addItem("blah8");
-		m.addItem("blah9");
+		List<String> list = new ArrayList<String>();
+		
+		list.add("Blah1");
+		list.add("blah2");
+		list.add("blah3");
+		list.add("blah4");
+		list.add("blah5");
+		list.add("blah6");
+		list.add("blah7");
+		list.add("blah8");
+		list.add("blah9");
+		
+		
 
+		final InlineMultiSelect m = new InlineMultiSelect();
+		m.setOptions(list);
+		
 		
 		RootPanel.get().add(m);
 	}
